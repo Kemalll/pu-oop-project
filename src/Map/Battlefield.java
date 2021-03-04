@@ -1,5 +1,8 @@
 package Map;
 
+import Map.Castles.CastleSagro;
+import Map.Castles.CastleWest;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -22,10 +25,16 @@ public class Battlefield extends JFrame {
                 GameTile tile=new GameTile(row,col);
                 tile.render(g);
 
+                CastleWest CastelW=new CastleWest(1,col,true);
+                CastelW.render(g);
 
+
+                CastleSagro CastleS=new CastleSagro(5,col,true);
+                CastleS.render(g);
+
+
+                g.drawRect(1000,40,500,300);
             }
         }
-        g.drawRect(1000,40,500,300);
-        Button bt=new Button("K");
     }
 }
