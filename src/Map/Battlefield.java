@@ -1,7 +1,6 @@
 package Map;
 
-import Map.Castles.CastleSagro;
-import Map.Castles.CastleWest;
+import Map.Castles.CastleFront;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,12 +24,17 @@ public class Battlefield extends JFrame {
                 GameTile tile=new GameTile(row,col);
                 tile.render(g);
 
-                CastleWest CastelW=new CastleWest(1,col,true);
-                CastelW.render(g);
+
+                CastleFront CastleWest= new CastleFront(0,col,true);
+                CastleFront CastleWest1=new CastleFront(1,col,true);
+                CastleWest.render(g);
+                CastleWest1.render(g);
 
 
-                CastleSagro CastleS=new CastleSagro(5,col,true);
-                CastleS.render(g);
+                CastleFront CastleSagro=new CastleFront(5,col,true);
+                CastleFront CastleSagro1=new CastleFront(6,col,true);
+                CastleSagro.render(g);
+                CastleSagro1.render(g);
 
 
                 g.drawRect(1000,40,500,300);
