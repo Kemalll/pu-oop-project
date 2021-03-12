@@ -4,8 +4,10 @@ import Map.Castles.CastleFront;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class Battlefield extends JFrame {
+public class Battlefield extends JFrame implements MouseListener {
 
     public Battlefield() {
 
@@ -15,6 +17,9 @@ public class Battlefield extends JFrame {
         this.setBackground(Color.LIGHT_GRAY);
     }
 
+    /**
+     * paints the bored of the gmae
+     */
     public void paint(Graphics g) {
         for (int row = 0; row < 7; row++) {
             for (int col = 0; col < 9; col++) {
@@ -23,8 +28,9 @@ public class Battlefield extends JFrame {
 
                 GameTile tile=new GameTile(row,col);
                 tile.render(g);
+                g.drawRect(1000,40,500,300);
 
-
+                //Creates a spawn point
                 CastleFront CastleWest= new CastleFront(0,col,true);
                 CastleFront CastleWest1=new CastleFront(1,col,true);
                 CastleWest.render(g);
@@ -36,9 +42,32 @@ public class Battlefield extends JFrame {
                 CastleSagro.render(g);
                 CastleSagro1.render(g);
 
-
-                g.drawRect(1000,40,500,300);
             }
         }
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
     }
 }

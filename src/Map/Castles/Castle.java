@@ -4,6 +4,7 @@ import Map.GameTile;
 
 import java.awt.*;
 
+
 public abstract class Castle {
     protected int row, col;
     protected boolean isSpawn;
@@ -12,10 +13,9 @@ public abstract class Castle {
     public Castle(int row, int col, boolean isSpawn) {
         this.row = row;
         this.col = col;
-        this.isSpawn=true;
-
     }
-    protected Color getTileColor(int row, int col) {
+
+    protected Color getTileColor(int row, int col) {         //Get the spawn zone tile color
         boolean sumEven = ((row + col) % 2 == 0);
         if (sumEven) return Color.LIGHT_GRAY;
         return Color.DARK_GRAY;
